@@ -1,0 +1,41 @@
+body{
+    background-image:url('T16JE6.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.nav1{
+    display: flex;
+    margin: 5px;
+}
+.nav2 {
+    display: flex;
+    
+    
+}
+.nav2 li{
+   padding: 18px;
+}
+.fnav{
+    display: flex;
+}
+.nav2 a{
+    text-decoration: none;
+}
+.div1{
+    width: 50%;
+    text-align: center;
+    background-color:turquoise;
+}
+.div2{
+    width: 50%;
+    text-align: center;
+    background-color:turquoise;
+}
+
+.logo img{
+    width:20%;
+    border-radius: 50px;
+
+
+}
