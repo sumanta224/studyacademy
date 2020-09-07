@@ -8,16 +8,16 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
 app.get("/about", (req, res) => {
-    res.sendFile(__dirname + "./about.html");
+    res.sendFile(__dirname + "/about.html");
 });
 app.get("/contrtact", (req, res) => {
-    res.sendFile(__dirname + "./contract.html");
+    res.sendFile(__dirname + "/contract.html");
 });
 app.get("/notes", (req, res) => {
-    res.sendFile(__dirname + "./notes.html");
+    res.sendFile(__dirname + "/notes.html");
 });
 app.get("/videos", (req, res) => {
-    res.sendFile(__dirname + "./video.html");
+    res.sendFile(__dirname + "/video.html");
 });
 
 
