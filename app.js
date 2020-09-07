@@ -7,16 +7,16 @@ app.use(express.static(path.join(__dirname,"public")));
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
-app.get("/ABOUT", (req, res) => {
+app.get("/about", (req, res) => {
     res.sendFile(__dirname + "/about.html");
 });
-app.get("/CONTRACT", (req, res) => {
+app.get("/contrtact", (req, res) => {
     res.sendFile(__dirname + "/contract.html");
 });
-app.get("/NOTES", (req, res) => {
+app.get("/notes", (req, res) => {
     res.sendFile(__dirname + "/notes.html");
 });
-app.get("/VIDEOS", (req, res) => {
+app.get("/videos", (req, res) => {
     res.sendFile(__dirname + "/video.html");
 });
 
