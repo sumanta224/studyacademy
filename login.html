@@ -1,0 +1,83 @@
+<html>
+    <head>
+    <title>LOGIN</title>
+    <style>
+        body{
+            background-color: aqua;
+
+        }
+        .div{
+            height: 300px;
+            width: 250px;
+            background-color: burlywood;
+            text-align: center;
+            border-radius: 10px; 
+            margin-left: 560px;
+            margin-top: 200px;
+        }
+    </style>
+
+    </head>
+
+    <body>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase.js"></script>
+
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCCH5U4bbEA_4-4eTfsYW8FPMEigxlrByA",
+    authDomain: "webpage-7c85e.firebaseapp.com",
+    databaseURL: "https://webpage-7c85e.firebaseio.com",
+    projectId: "webpage-7c85e",
+    storageBucket: "webpage-7c85e.appspot.com",
+    messagingSenderId: "383634469345",
+    appId: "1:383634469345:web:6a6e0695cdd6a37c7c22a0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+   function signup(){
+       var email=document.getElementById('email').value;
+       var password=document.getElementById('password').value;
+       firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
+           alert('successfully signup');
+       }).catch(function(error){
+            var errorcode=error.code;
+            var errormsg=error.message;
+
+       })
+   }
+
+   function login(){
+      var email=document.getElementById('email').value;
+      var password=document.getElementById('password').value;
+      firebase.auth().signInWithEmailAndPassword(email,password).then(function(){
+          alert('successfully login');
+      }).catch(function(){
+          var errorcode=error.code;
+          var errormsg=error.message;
+      })
+   }
+
+   function signout(){
+       auth.signOut();
+      alert(' successfully signout');
+   }
+
+
+</script>
+       <div class="div">
+        <h1 class="h1"><centre>LOGIN</centre></h1>
+        <input type="email" placeholder="Enter Email" id="email"><br><br>
+        <input type="password" placeholder="Enter password" id="password"><br><br>
+
+        <button onclick="login()"  id="login">LOGIN</button><br><br>
+        <button onclick="signup()" id="signup">SIGNUP</button><br><br>
+        <button onclick="signout()" id="signout">SIGN OUT</button><br><br>
+        </div>
+    </body>
+</html>
