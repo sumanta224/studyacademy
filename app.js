@@ -20,6 +20,10 @@ app.get("/videos", (req, res) => {
     res.sendFile(__dirname + "/video.html");
 });
 
+app.get("/login", (req, res) => {
+    res.sendFile(__dirname + "/login.html");
+});
+
 
 app.listen(port, () => {
     console.log("Server listening on port " + port);
