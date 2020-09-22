@@ -16,7 +16,222 @@
 </head>
 <body>
     <h1 class="h1">NOTES</h1>
-    
+    <h2><CENTER>SINGLE LINKED LIST</CENTER></h2>
+    <p>
+        <p>
+#include<stdio.h>
+#include<stdlib.h>
+int len;
+struct node
+{
+	int data;
+	struct node*next;
+	};
+	struct node*head=NULL;
+	void append();
+	int length();
+	void display();
+	void middle();
+	void begin();
+	void deletef();
+	void deletem();
+	void deletel();
+	int main()
+	{
+		int ch;
+		while(1)
+		{
+		printf("\n\t\t\tLINKED LIST");
+		printf("\n\t1.Append:");
+		printf("\n\t2.Length:");
+		printf("\n\t3.Display:");
+		printf("\n\t4.Insertation at middle:");
+		printf("\n\t5.Insertation at begin:");
+		printf("\n\t6.Delete at begin:");
+		printf("\n\t7.Delete at middle:");
+		printf("\n\t8.Delete at end:");
+		printf("\n\t9.Quite:");
+		printf("\n\n\tChoose an option:");
+		scanf("%d",&ch);
+		switch(ch)
+		{	
+			case 1:
+		      append();
+			  break;
+			case 2:
+			  len=length();
+			 printf("Length=%d",len);
+			break;
+			case 3:
+			 display();
+			break;
+			case 4:
+			middle();
+			break;
+			case 5:
+			begin();
+			break;
+			case 6:
+			deletef();
+			break;
+			case 7:
+			deletem();
+			break;
+			case 8:
+			deletel();
+			break;
+			case 9:
+			exit(0);
+			break;
+			default:
+			printf("opps!Enter the wright input");
+			}	
+			}
+		return 0;
+		}
+ void append()
+		{
+			struct node*ptr;
+			ptr=(struct node*)malloc(sizeof(struct node));
+	        printf("Enter the data:");
+	        scanf("%d",&ptr->data);
+	        ptr->next=NULL;
+	        if(head==NULL)
+	        {
+	        	head=ptr;
+	        	}		
+			else
+	        	{
+	        		struct node*p;
+	        		p=head;
+	        		while(p->next!=NULL)
+	        		{
+	        			p=p->next;
+	        			}
+	        			p->next=ptr;
+	        		}	
+	        	}	
+     length()
+	     {
+	     	struct node*ptr;
+	     	int count=0;
+	     	ptr=head;
+	     	while(ptr!=NULL)
+	     	{
+	     		count++; 
+	     		ptr=ptr->next;
+	     		}
+	     		return count;
+	      	}
+void display()
+	      	{
+	      		struct node*ptr;
+	      		ptr=head;
+	      		if(ptr==NULL)
+	      		{
+	      	       printf("List is empty");
+	      			}
+	      			else
+	      			{
+	      				while(ptr!=NULL)
+	      				{
+	      					printf("%d-->",ptr->data);
+	      					ptr=ptr->next;
+	      					}
+	      					
+	      				}
+	      		}		
+ void middle()
+	      {
+	      	int i=1;int loc,len;
+	      	struct node*ptr,*p;
+	      	printf("Enter the location :");
+	      	scanf("%d",&loc);
+	      	len=length();
+	      	if(len<loc)
+	      	{
+	      		printf("opps!Enter the right location");
+	      		}
+	      	else
+	      		{
+	      			p=head;
+	      			while(i<loc)
+	      			{
+	      				p=p->next;
+	      				i++;
+	      				}
+	      			ptr=(struct node*)malloc(sizeof(struct node));
+	      				printf("Enter the inserted data:");
+	      				scanf("%d",&ptr->data);
+	      				ptr->next=NULL;
+	      				ptr->next=p->next;
+	      				p->next=ptr;
+	      			}
+	      	}
+    void begin()
+	      	{
+	      		struct node*ptr;
+	      		ptr=(struct node*)malloc(sizeof(struct node));
+	      		if(ptr==NULL)
+	      		{
+	      			printf("Memory not allocated");
+	      			}
+	      			else
+	      			{
+	      		printf("Enter the inserted data:");
+	      		scanf("%d",&ptr->data);
+	      	     ptr->next=head;
+	      	    head=ptr;
+	      				}
+	      		}
+     void deletef()
+	      		{
+	      			struct node*ptr;
+	      			ptr=head;
+	      			head=head->next;
+	      			free(ptr);
+	      			}
+	 void deletem()
+	      		{
+	      			
+	      			int loc;
+	      			printf("Enter the location:");
+	      			scanf("%d",&loc);
+	      			len=length();
+	      			if(loc>length())
+	      			{
+	      				printf("\nInvalid location");
+	      				}
+	      				else
+	      				{
+	      					struct node*ptr=head,*p;
+	      					int i=1;
+	      					while(i<loc-1)
+	      					{
+	      						ptr=ptr->next;
+	      						i++;
+	      						}
+	      					  p=ptr->next;
+	      					 ptr->next=p->next;
+	      						p->next=NULL;
+	      					}
+	      			}
+	 void deletel()
+	      		{
+	      			struct node*p,*q;
+	      			p=head;
+	      			while(p->next!=NULL)
+	      			{
+	      				q=p;
+	      				p=p->next;
+	      				}
+	      				q->next=NULL;
+	      				free(p);
+	      			}
+	     		     	
+//Linkedlist operation(Made by sumanta banerjee)//
+</p>
+    </p>
   
 </body>
 </html>
